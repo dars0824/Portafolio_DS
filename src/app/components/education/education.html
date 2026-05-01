@@ -1,0 +1,63 @@
+<div class="content-block timeline">
+  <header class="content-block__header">
+    <p>Educacion</p>
+    <h2>Formacion y certificaciones</h2>
+  </header>
+
+  <ol #timelineList class="timeline__list">
+    @for (entry of timeline; track entry.program) {
+      <li class="timeline__item">
+        <span class="timeline__dot"></span>
+        <article>
+          <p class="timeline__period">{{ entry.period }}</p>
+          <h3>{{ entry.program }}</h3>
+          <h4 class="timeline__institution">
+            <span>{{ entry.institution }}</span>
+            @if (entry.badge) {
+              <img
+                class="timeline__institution-badge"
+                [src]="entry.badge.src"
+                [alt]="entry.badge.alt"
+                loading="lazy"
+                decoding="async"
+              />
+            }
+          </h4>
+          <p>{{ entry.details }}</p>
+          <p class="timeline__skills"><strong>Skills:</strong> {{ entry.skills.join(' - ') }}</p>
+
+          @if (entry.credentials?.length) {
+            <div class="timeline__credentials">
+              @for (credential of entry.credentials; track credential.src) {
+                <a
+                  class="timeline__credential"
+                  [href]="credential.href ?? credential.src"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  @if (credential.type === 'pdf') {
+                    <iframe
+                      class="timeline__credential-preview"
+                      [src]="credentialPreviewSrc(credential)"
+                      [title]="credential.alt"
+                      loading="lazy"
+                    ></iframe>
+                  } @else {
+                    <img
+                      class="timeline__credential-preview"
+                      [src]="credentialPreviewSrc(credential)"
+                      [alt]="credential.alt"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  }
+                  <span>{{ credential.alt }}</span>
+                </a>
+              }
+            </div>
+          }
+        </article>
+      </li>
+    }
+  </ol>
+</div>

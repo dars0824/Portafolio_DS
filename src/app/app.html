@@ -1,0 +1,36 @@
+﻿<div class="app-shell">
+  <div class="app-shell__backdrop" aria-hidden="true">
+    <div class="app-shell__grid"></div>
+    <div class="app-shell__aurora app-shell__aurora--a"></div>
+    <div class="app-shell__aurora app-shell__aurora--b"></div>
+    <div class="app-shell__noise"></div>
+  </div>
+
+  @if (!introDone()) {
+    <app-anprinci (finished)="completeIntro()"></app-anprinci>
+  } @else {
+    <div class="app-content">
+      @if (showSplineViewer()) {
+        <div
+          class="app-spline-hero"
+          [style.--spline-progress]="splineScrollProgress()"
+          aria-hidden="true"
+        >
+          <spline-viewer url="https://prod.spline.design/fIWAWvr1m7T-sZEW/scene.splinecode"></spline-viewer>
+        </div>
+      }
+
+      <app-menu></app-menu>
+      <main class="app-main">
+        <router-outlet></router-outlet>
+      </main>
+      <app-footer></app-footer>
+
+      @if (showBackToTopButton()) {
+        <button type="button" class="app-scroll-top" (click)="scrollToTop()">
+          Subir
+        </button>
+      }
+    </div>
+  }
+</div>

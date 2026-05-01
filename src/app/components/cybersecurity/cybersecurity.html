@@ -1,0 +1,15 @@
+<div class="content-block cyber">
+  <header class="content-block__header">
+    <p>Zona Cybersecurity</p>
+    <h2>Live defensive terminal simulation</h2>
+  </header>
+
+  <div class="cyber__terminal" role="status" aria-live="polite">
+    @for (line of renderedLog(); track line) {
+      <p>{{ line }}</p>
+    }
+    <span class="cyber__cursor"></span>
+  </div>
+
+  <p class="cyber__status">Status: {{ status() }}</p>
+</div>

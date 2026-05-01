@@ -1,0 +1,18 @@
+<header class="menu-shell">
+  <a class="menu-shell__brand" href="#home" (click)="scrollTo('home', $event)">
+    <span class="menu-shell__brand-text">Cyber Frontend Engineer</span>
+  </a>
+
+  <nav class="menu-shell__nav" aria-label="Navegacion principal">
+    @for (section of sections; track section.id) {
+      <a
+        class="menu-shell__link"
+        [href]="'#' + section.id"
+        [class.menu-shell__link--active]="activeSection() === section.id"
+        (click)="scrollTo(section.id, $event)"
+      >
+        <span>{{ section.shortLabel }}</span>
+      </a>
+    }
+  </nav>
+</header>

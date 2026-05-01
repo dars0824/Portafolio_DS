@@ -1,0 +1,230 @@
+import {
+  AfterViewInit,
+  ChangeDetectionStrategy,
+  Component,
+  ElementRef,
+  OnDestroy,
+  ViewChild
+} from '@angular/core';
+import { DIPLOMA_FILES, type DiplomaPhoto } from '../../shared/photo-assets';
+
+interface EducationEntry {
+  institution: string;
+  program: string;
+  period: string;
+  details: string;
+  skills: string[];
+  badge?: {
+    src: string;
+    alt: string;
+  };
+  credentials?: DiplomaPhoto[];
+}
+
+@Component({
+  selector: 'app-education',
+  standalone: true,
+  imports: [],
+  templateUrl: './education.html',
+  styleUrl: './education.css',
+  changeDetection: ChangeDetectionStrategy.OnPush
+})
+export class EducationComponent implements AfterViewInit, OnDestroy {
+  @ViewChild('timelineList')
+  private timelineListRef?: ElementRef<HTMLOListElement>;
+
+  private rafId?: number;
+
+  private readonly scrollHandler = (): void => {
+    this.scheduleProgressUpdate();
+  };
+
+  private readonly resizeHandler = (): void => {
+    this.scheduleProgressUpdate();
+  };
+
+  protected readonly timeline: EducationEntry[] = [
+    {
+      institution: 'ITLA',
+      program:
+        'Diplomado en Seguridad Informatica, Computer and Information Systems Security/Information Assurance',
+      period: 'Apr 2025 - Jun 2025',
+      details: 'Formacion en seguridad informatica aplicada y fundamentos de proteccion de sistemas.',
+      skills: ['Seguridad de redes', 'Software Development', 'Seguridad de la informacion', 'HTML'],
+      credentials: [
+        {
+          src: DIPLOMA_FILES.previewSeguridadInformatica,
+          href: DIPLOMA_FILES.seguridadInformatica,
+          alt: 'Certificado Diplomado Seguridad Informatica - ITLA',
+          type: 'image'
+        }
+      ]
+    },
+    {
+      institution: 'ITLA',
+      program: 'Certificado de Desarrollo Web Front-End con Angular, Web/Multimedia Management and Webmaster',
+      period: 'Jan 2025 - Mar 2025',
+      details: 'Formacion en desarrollo frontend moderno con Angular y diseno de interfaces web.',
+      skills: [
+        'Desarrollo web',
+        'Software Development',
+        'AngularJS',
+        'Web Development',
+        'Angular CLI',
+        'Diseno de interfaces web',
+        'HTML',
+        'Angular Material'
+      ],
+      credentials: [
+        {
+          src: DIPLOMA_FILES.previewAngularFrontend,
+          href: DIPLOMA_FILES.angularFrontend,
+          alt: 'Certificado Curso Desarrollo Web Front-End con Angular - ITLA',
+          type: 'image'
+        }
+      ]
+    },
+    {
+      institution: 'ITLA',
+      program: 'Diplomado en Programacion Movil IOS',
+      period: 'Oct 2024 - Dec 2024',
+      details: 'Base tecnica en desarrollo movil y componentes clave del ecosistema de aplicaciones.',
+      skills: [
+        'Desarrollo de aplicaciones para iPhone',
+        'Desarrollo web',
+        'Software Development',
+        'AngularJS',
+        'Angular CLI',
+        'HTML',
+        'Desarrollo de aplicaciones moviles',
+        'Angular Material'
+      ],
+      credentials: [
+        {
+          src: DIPLOMA_FILES.previewProgramacionMovilIos,
+          href: DIPLOMA_FILES.programacionMovilIos,
+          alt: 'Certificado Diplomado en Programacion Movil para Plataforma iOS',
+          type: 'image'
+        }
+      ]
+    },
+    {
+      institution: 'INFOTEP',
+      program:
+        'Certificado en Operaciones basicas de programas de oficina, Computer and Information Sciences and Support Services',
+      period: 'Aug 2024 - Oct 2024',
+      details: 'Entrenamiento en herramientas de oficina y soporte operativo para entornos profesionales.',
+      skills: [
+        'Microsoft Outlook',
+        'Revision de documentos',
+        'Microsoft Office',
+        'Ciencias de la computacion',
+        'Microsoft PowerPoint',
+        'Dispositivos moviles',
+        'Microsoft Word',
+        'Microsoft Excel',
+        'Equipos informaticos'
+      ]
+    },
+    {
+      institution: 'Universidad APEC',
+      program: 'Formacion academica complementaria',
+      period: 'Formacion registrada en CV',
+      details: 'Formacion adicional orientada al fortalecimiento profesional en tecnologia.',
+      skills: ['Base academica', 'Pensamiento analitico', 'Aprendizaje continuo']
+    },
+    {
+      institution: 'NIAERD',
+      program: 'Excel Intermedio',
+      period: 'Formacion registrada en CV',
+      details: 'Capacitacion en manejo intermedio de hojas de calculo para tareas operativas y de soporte.',
+      skills: ['Excel Intermedio', 'Analisis de datos', 'Productividad']
+    },
+    {
+      institution: 'LinkedIn',
+      program: 'Microsoft 365: Administration',
+      period: 'Issued Dec 2025',
+      details: 'Licencia y certificacion enfocada en administracion de Microsoft 365 y servicios cloud.',
+      skills: ['Microsoft 365 and Cloud Administration']
+    },
+    {
+      institution: 'MACROSeguridad-MASEG',
+      program: 'Fundamentos de Ciberseguridad',
+      period: 'Sep 2025 - Nov 2025 | Issued Nov 2025 - Expires Nov 2035',
+      details:
+        'Diplomado y certificacion orientados a operaciones de infraestructura, redes y buenas practicas de soporte.',
+      skills: [
+        'Seguridad de redes',
+        'Configuracion y administracion de redes empresariales basicas',
+        'Ensamblaje de equipos',
+        'Virtualizacion de maquinas y servidores',
+        'Impresoras',
+        'Soporte operativo',
+        'Seguridad base'
+      ],
+      badge: {
+        src: DIPLOMA_FILES.fundamentosCiberseguridadBadge,
+        alt: 'Insignia Fundamentos de Ciberseguridad'
+      },
+      credentials: [
+        {
+          src: DIPLOMA_FILES.fundamentosCiberseguridadCert,
+          alt: 'Certificado Fundamentos de Ciberseguridad - MACROSeguridad',
+          type: 'image'
+        }
+      ]
+    }
+  ];
+
+  ngAfterViewInit(): void {
+    this.updateTimelineProgress();
+    window.addEventListener('scroll', this.scrollHandler, { passive: true });
+    window.addEventListener('resize', this.resizeHandler, { passive: true });
+  }
+
+  ngOnDestroy(): void {
+    window.removeEventListener('scroll', this.scrollHandler);
+    window.removeEventListener('resize', this.resizeHandler);
+
+    if (this.rafId) {
+      window.cancelAnimationFrame(this.rafId);
+    }
+  }
+
+  private scheduleProgressUpdate(): void {
+    if (this.rafId) {
+      return;
+    }
+
+    this.rafId = window.requestAnimationFrame(() => {
+      this.rafId = undefined;
+      this.updateTimelineProgress();
+    });
+  }
+
+  private updateTimelineProgress(): void {
+    const timelineList = this.timelineListRef?.nativeElement;
+    if (!timelineList) {
+      return;
+    }
+
+    const rect = timelineList.getBoundingClientRect();
+    const viewportHeight = window.innerHeight;
+    const startY = viewportHeight * 0.24;
+    const endY = viewportHeight * 0.74;
+    const travel = rect.height + (startY - endY);
+
+    const rawProgress = (startY - rect.top) / Math.max(travel, 1);
+    const progress = Math.min(1, Math.max(0, rawProgress));
+
+    timelineList.style.setProperty('--timeline-progress', progress.toFixed(3));
+  }
+
+  protected credentialPreviewSrc(credential: DiplomaPhoto): string {
+    if (credential.type !== 'pdf') {
+      return credential.src;
+    }
+
+    return `${credential.src}#toolbar=0&navpanes=0&scrollbar=0&view=FitH`;
+  }
+}

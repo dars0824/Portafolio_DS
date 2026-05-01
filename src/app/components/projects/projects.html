@@ -1,0 +1,31 @@
+<div class="content-block">
+  <header class="content-block__header">
+    <p>Proyectos</p>
+    <h2>Architecture, product, and security in one delivery</h2>
+  </header>
+
+  <div class="projects-grid">
+    @for (project of projects; track project.title) {
+      <article class="project-card">
+        <div class="project-card__media" [style.background]="project.mediaGradient"></div>
+
+        <div class="project-card__body">
+          <h3>{{ project.title }}</h3>
+          <p>{{ project.description }}</p>
+          <p class="project-card__problem">Problem solved: {{ project.problemSolved }}</p>
+
+          <ul>
+            @for (tech of project.technologies; track tech) {
+              <li>{{ tech }}</li>
+            }
+          </ul>
+
+          <div class="project-card__actions">
+            <a [href]="project.demo" target="_blank" rel="noopener">Demo</a>
+            <a [href]="project.github" target="_blank" rel="noopener">GitHub</a>
+          </div>
+        </div>
+      </article>
+    }
+  </div>
+</div>

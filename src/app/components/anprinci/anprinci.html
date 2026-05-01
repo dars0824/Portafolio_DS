@@ -1,0 +1,21 @@
+<div #overlay class="anprinci" [class.anprinci--exit]="stage() === 'exit'">
+  <canvas #sceneCanvas class="anprinci__canvas"></canvas>
+
+  <div class="anprinci__scanline" aria-hidden="true"></div>
+  <div class="anprinci__noise" aria-hidden="true"></div>
+  <div class="anprinci__glow" aria-hidden="true"></div>
+
+  <div class="anprinci__content">
+    <p class="anprinci__boot">initializing secure portfolio protocol...</p>
+    <h1 class="anprinci__title" [class.anprinci__title--glitch]="stage() !== 'boot'">TU NOMBRE AQUI</h1>
+    <p class="anprinci__role">Frontend Engineer + Cybersecurity Specialist</p>
+    <p class="anprinci__stage">stage: {{ stage() }}</p>
+    <button type="button" class="anprinci__skip" (click)="skip()">Saltar Intro</button>
+  </div>
+
+  <div class="anprinci__binary" aria-hidden="true">
+    @for (bit of binaryCloud; track $index) {
+      <span [style.animation-delay.ms]="$index * 90">{{ bit }}</span>
+    }
+  </div>
+</div>

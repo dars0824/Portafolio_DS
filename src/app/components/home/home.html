@@ -1,0 +1,96 @@
+<section id="home" data-menu-section class="home hero-section">
+  <div class="home__layout">
+    <div class="home__top">
+      <div class="home__intro">
+        <p class="home__kicker">Auxiliar de Sistemas | Ciberseguridad y Soporte TI</p>
+        <h1 class="home__name">Darwin Alfonso Sosa Santana</h1>
+        <p class="home__intro-text">
+          Tecnico orientado a soporte TI, redes y ciberseguridad con experiencia en operacion onsite y mejora
+          continua.
+        </p>
+      </div>
+
+      <div class="home__visual">
+        <div class="home__portrait">
+          <div class="home__portrait-scan"></div>
+          <div class="home__portrait-core" role="img" aria-label="Foto personal"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="home__copy">
+      <h2 class="home__headline">
+        Soporte tecnico, redes y seguridad <span>con enfoque practico</span>
+      </h2>
+      <p class="home__description">
+        Estudiante de ITLA con experiencia en Serenade Punta Cana, disponibilidad de medio tiempo y enfoque en
+        administracion de sistemas, Microsoft 365, conectividad y continuidad operativa.
+      </p>
+      <div class="home__meta" aria-label="Resumen profesional">
+        <span>Ubicacion: Santo Domingo Norte</span>
+        <span>Idioma: Ingles (B1)</span>
+        <span>Disponibilidad: Medio tiempo</span>
+      </div>
+
+      <div class="home__terminal" aria-label="Terminal simulada">
+        <span class="home__prompt">root@portfolio:~$</span>
+        <span class="home__command">{{ typedCommand() }}</span>
+        <span class="home__cursor"></span>
+      </div>
+
+      <div class="home__actions">
+        <a href="#experience">Ver Experiencia</a>
+        <a href="#contact">Abrir Contacto</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="skills" data-menu-section class="section-slot">
+  @defer (on viewport; prefetch on idle) {
+    <app-skills></app-skills>
+  } @placeholder {
+    <div class="section-slot__placeholder">Cargando Skills / Lenguajes...</div>
+  }
+</section>
+
+<section id="education" data-menu-section class="section-slot">
+  @defer (on viewport; prefetch on idle) {
+    <app-education></app-education>
+  } @placeholder {
+    <div class="section-slot__placeholder">Cargando Educacion...</div>
+  }
+</section>
+
+<section id="experience" data-menu-section class="section-slot">
+  @defer (on viewport; prefetch on idle) {
+    <app-experience></app-experience>
+  } @placeholder {
+    <div class="section-slot__placeholder">Cargando Experiencia...</div>
+  }
+</section>
+
+<section id="projects" data-menu-section class="section-slot">
+  @defer (on viewport; prefetch on idle) {
+    <app-projects></app-projects>
+  } @placeholder {
+    <div class="section-slot__placeholder">Cargando Proyectos...</div>
+  }
+</section>
+
+<section id="cybersecurity" data-menu-section class="section-slot">
+  @defer (on viewport; prefetch on idle) {
+    <app-cybersecurity></app-cybersecurity>
+  } @placeholder {
+    <div class="section-slot__placeholder">Cargando Zona Cybersecurity...</div>
+  }
+</section>
+
+<section id="contact" data-menu-section class="section-slot">
+  @defer (on viewport; prefetch on idle) {
+    <app-contact></app-contact>
+  } @placeholder {
+    <div class="section-slot__placeholder">Cargando Contacto...</div>
+  }
+</section>
+

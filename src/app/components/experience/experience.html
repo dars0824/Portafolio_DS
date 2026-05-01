@@ -1,0 +1,19 @@
+<div class="content-block">
+  <header class="content-block__header">
+    <p>Experiencia</p>
+    <h2>Experiencia profesional</h2>
+  </header>
+
+  <div class="experience-grid">
+    @for (item of experience; track item.role) {
+      <article class="experience-card">
+        <p class="experience-card__period">{{ item.period }}</p>
+        <h3>{{ item.role }}</h3>
+        <h4>{{ item.company }}</h4>
+        <p class="experience-card__location">{{ item.location }}</p>
+        <p>{{ item.impact }}</p>
+        <p class="experience-card__skills"><strong>Skills:</strong> {{ item.skills.join(' - ') }}</p>
+      </article>
+    }
+  </div>
+</div>

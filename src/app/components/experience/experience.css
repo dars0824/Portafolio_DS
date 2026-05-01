@@ -1,0 +1,77 @@
+.content-block {
+  border: 1px solid rgba(0, 212, 255, 0.26);
+  border-radius: 1.2rem;
+  padding: clamp(1rem, 2vw, 1.5rem);
+  background: linear-gradient(135deg, rgba(9, 16, 28, 0.84), rgba(8, 13, 23, 0.66));
+}
+
+.content-block__header p {
+  margin: 0;
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.11em;
+  color: var(--neon-blue);
+  font-size: 0.72rem;
+}
+
+.content-block__header h2 {
+  margin: 0.45rem 0 0;
+  font-family: var(--font-display);
+  font-size: clamp(1.45rem, 2.2vw, 2.2rem);
+}
+
+.experience-grid {
+  margin-top: 1.1rem;
+  display: grid;
+  gap: 0.9rem;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+}
+
+.experience-card {
+  padding: 0.95rem;
+  border-radius: 0.86rem;
+  border: 1px solid rgba(0, 255, 198, 0.2);
+  background: rgba(8, 13, 22, 0.77);
+  transition: transform 250ms ease, box-shadow 250ms ease, border-color 250ms ease;
+}
+
+.experience-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(0, 212, 255, 0.6);
+  box-shadow: 0 16px 24px rgba(0, 0, 0, 0.36);
+}
+
+.experience-card__period {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--cyber-cyan);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.experience-card h3,
+.experience-card h4,
+.experience-card p {
+  margin: 0.28rem 0;
+}
+
+.experience-card h4 {
+  color: var(--text-soft);
+  font-weight: 500;
+}
+
+.experience-card__location {
+  margin: 0.2rem 0;
+  color: rgba(230, 241, 255, 0.75);
+  font-size: 0.9rem;
+}
+
+.experience-card p {
+  color: rgba(230, 241, 255, 0.83);
+  line-height: 1.52;
+}
+
+.experience-card__skills strong {
+  color: var(--cyber-cyan);
+}
