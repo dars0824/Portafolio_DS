@@ -5,7 +5,6 @@ interface ProjectItem {
   description: string;
   technologies: string[];
   problemSolved: string;
-  demo: string;
   github: string;
   mediaGradient: string;
 }
@@ -26,7 +25,6 @@ export class ProjectsComponent {
         'Sitio personal enfocado en presentar experiencia en soporte TI, ciberseguridad y formacion tecnica.',
       technologies: ['Angular', 'TypeScript', 'CSS', 'HTML'],
       problemSolved: 'Centralizar perfil profesional y certificaciones en una sola experiencia web.',
-      demo: 'https://github.com/dars0824',
       github: 'https://github.com/dars0824',
       mediaGradient:
         "center / cover no-repeat url('/shared/fotos/diplomas/Proyecto%20portafolio%20imagen.png')"

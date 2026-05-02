@@ -1,25 +1,24 @@
 <div class="content-block">
   <header class="content-block__header">
-    <p>Skills / Lenguajes</p>
+    <p>Skills</p>
     <h2>Habilidades tecnicas basadas en experiencia real</h2>
   </header>
 
   <div class="skills-grid">
     @for (skill of skills; track skill.name) {
-      <article class="skill-card">
-        <div class="skill-card__top">
-          <h3>{{ skill.name }}</h3>
-          <span>{{ skill.level }}%</span>
-        </div>
+    <article class="skill-card">
+      <div class="skill-card__top">
+        <h3>{{ skill.name }}</h3>
+      </div>
 
-        <p>{{ skill.note }}</p>
+      <p>{{ skill.note }}</p>
 
-        <div class="skill-card__bar" aria-hidden="true">
-          <span [style.width.%]="skill.level"></span>
-        </div>
+      <div class="skill-card__bar" aria-hidden="true">
+        <span [style.width.%]="skill.level"></span>
+      </div>
 
-        <small>{{ skill.domain }}</small>
-      </article>
+      <small>{{ skill.domain }}</small>
+    </article>
     }
   </div>
 </div>

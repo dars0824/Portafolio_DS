@@ -204,7 +204,7 @@ export class AnprinciComponent implements AfterViewInit, OnDestroy {
       timeline.to(role, { opacity: 1, y: 0, filter: 'blur(0px)', duration: 0.78 }, '<');
     }
 
-    timeline.to(overlay, { opacity: 0, duration: 1.1, delay: 1.65 });
+    timeline.to(overlay, { opacity: 0, duration: 1.1, delay: 13.9 });
     timeline.call(() => this.zone.run(() => this.stage.set('exit')), undefined, '>-0.9');
   }
 
@@ -217,7 +217,7 @@ export class AnprinciComponent implements AfterViewInit, OnDestroy {
 
     this.fallbackTimeoutId = window.setTimeout(() => {
       this.zone.run(() => this.complete());
-    }, 5200);
+    }, 15000);
   }
 
   private complete(): void {
