@@ -18,6 +18,10 @@ export const DIPLOMA_FILES = {
     'Certificado_Diplomado_en_Programaci%C3%B3n_M%C3%B3vil_para_Plataforma_iOS_(IONIC).pdf'
   ),
   previewSeguridadInformatica: diplomaPath('Seguridad%20informatica.png'),
+  itEssentials: diplomaPath('ITEssentialsUpdate20260428-31-o6ydaq.pdf'),
+  previewItEssentials: diplomaPath('IT Essentials.png'),
+  ccna1: diplomaPath('CCNAITNUpdated20260428-32-hprwg2.pdf'),
+  previewCcna1: diplomaPath('CCNA1.png'),
   previewAngularFrontend: diplomaPath('Curso%20de%20Angular.png'),
   previewProgramacionMovilIos: diplomaPath('Programacion%20movil.png'),
   fundamentosCiberseguridadBadge: diplomaPath('fundamentos-de-ciberseguridad.png'),

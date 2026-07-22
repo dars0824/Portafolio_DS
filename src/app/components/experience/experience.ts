@@ -1,4 +1,13 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import {
+  AfterViewInit,
+  ChangeDetectionStrategy,
+  Component,
+  ElementRef,
+  OnDestroy,
+  QueryList,
+  ViewChildren
+} from '@angular/core';
+import SimpleParallax from 'simple-parallax-js';
 
 interface ExperienceItem {
   role: string;
@@ -7,6 +16,7 @@ interface ExperienceItem {
   location: string;
   impact: string;
   skills: string[];
+  imageSrc?: string;
 }
 
 @Component({
@@ -17,7 +27,12 @@ interface ExperienceItem {
   styleUrl: './experience.css',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ExperienceComponent {
+export class ExperienceComponent implements AfterViewInit, OnDestroy {
+  @ViewChildren('parallaxImage', { read: ElementRef })
+  private parallaxImageRefs!: QueryList<ElementRef<HTMLImageElement>>;
+
+  private parallaxInstances: Array<InstanceType<typeof SimpleParallax>> = [];
+
   protected readonly experience: ExperienceItem[] = [
     {
       role: 'Auxiliar de sistemas',
@@ -46,9 +61,40 @@ export class ExperienceComponent {
         'VLAN',
         'Conflict Resolution',
         'IP Cameras'
-      ]
+      ],
+      imageSrc: '/shared/fotos/Serenade.jpg'
     }
   ];
+
+  ngAfterViewInit(): void {
+    this.initializeParallax();
+    this.parallaxImageRefs.changes.subscribe(() => this.initializeParallax());
+  }
+
+  ngOnDestroy(): void {
+    this.parallaxInstances.forEach((instance) => instance.destroy());
+    this.parallaxInstances = [];
+  }
+
+  private initializeParallax(): void {
+    this.parallaxInstances.forEach((instance) => instance.destroy());
+    this.parallaxInstances = [];
+
+    if (!this.parallaxImageRefs?.length) {
+      return;
+    }
+
+    this.parallaxImageRefs.toArray().forEach((imageRef) => {
+      const image = imageRef.nativeElement;
+      this.parallaxInstances.push(
+        new SimpleParallax(image, {
+          delay: 0.6,
+          scale: 1.15,
+          transition: 'cubic-bezier(0,0,0,1)'
+        })
+      );
+    });
+  }
 }
 
 

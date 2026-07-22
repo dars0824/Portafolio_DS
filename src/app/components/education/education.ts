@@ -35,6 +35,16 @@ export class EducationComponent implements AfterViewInit, OnDestroy {
 
   private rafId?: number;
 
+  protected showAll = false;
+
+  protected get timelineToShow(): EducationEntry[] {
+    return this.showAll ? this.timeline : this.timeline.slice(0, 5);
+  }
+
+  protected toggleShowAll(): void {
+    this.showAll = !this.showAll;
+  }
+
   private readonly scrollHandler = (): void => {
     this.scheduleProgressUpdate();
   };
@@ -45,9 +55,67 @@ export class EducationComponent implements AfterViewInit, OnDestroy {
 
   protected readonly timeline: EducationEntry[] = [
     {
+      institution: 'Instituto Tecnologico de las Americas (ITLA)',
+      program: 'Tecnologo en Ciberseguridad',
+      period: 'Ene 2026 - Dic 2028 | Issued Dic 2028',
+      details: 'Formacion en seguridad de sistemas, redes y proteccion de informacion.',
+      skills: ['Seguridad de redes', 'Seguridad de la informacion', 'Ciberseguridad', 'Networking']
+    },
+    {
+      institution: 'Cisco Networking Academy',
+      program: 'IT Essentials: PC Hardware and Software',
+      period: 'Ene 2026 - Apr 2026 | Issued Apr 2026',
+      details: 'Formacion en manejo correcto de TI y fundamentos de proteccion de sistemas.',
+      skills: ['Seguridad de redes', 'Mantenimiento de hardware', 'Operaciones de Tickets', 'Windows Server'],
+      credentials: [
+        {
+          src: DIPLOMA_FILES.previewItEssentials,
+          href: DIPLOMA_FILES.itEssentials,
+          alt: 'Certificado IT Essentials - Cisco Networking Academy',
+          type: 'image'
+        }
+      ]
+    },
+    {
+      institution: 'Cisco Networking Academy',
+      program: 'CCNA 1: Introduction to Networks',
+      period: 'Ene 2026 - Apr 2026 | Issued Apr 2026',
+      details: 'Formacion en fundamentos de redes y seguridad de sistemas en red.',
+      skills: ['Seguridad de redes', 'Networking', 'Configuracion de routers y switches', 'Redes LAN/WAN'],
+      credentials: [
+        {
+          src: DIPLOMA_FILES.previewCcna1,
+          href: DIPLOMA_FILES.ccna1,
+          alt: 'Certificado CCNA 1 - Cisco Networking Academy',
+          type: 'image'
+        }
+      ]
+    },
+    {
+      institution: 'Cisco Networking Academy',
+      program: 'CCNA 2: Switching, Routing, and Wireless Essentials',
+      period: 'Apr 2026 - Ago 2026 | Issued Ago 2026',
+      details: 'Formacion en configuracion de redes y seguridad de sistemas en red.',
+      skills: ['Seguridad de redes', 'Networking', 'Configuracion de routers y switches', 'Redes LAN/WAN']
+    },
+    {
+      institution: 'Cisco Networking Academy',
+      program: 'C++ Essentials',
+      period: 'Apr 2026 - Ago 2026 | Issued Ago 2026',
+      details: 'Formacion en fundamentos de programacion y desarrollo de software.',
+      skills: ['Programacion en C++', 'Desarrollo de software', 'Algoritmos y estructuras de datos']
+    },
+    {
+      institution: 'Fundacion Carlos Slim',
+      program: 'Administrador de bases de datos',
+      period: 'Apr 2026 - Ago 2026 | Issued Ago 2026',
+      details: 'Formacion en administracion de bases de datos y seguridad de la informacion.',
+      skills: ['Administracion de bases de datos', 'SQL', 'SQL Server']
+    },
+    {
       institution: 'ITLA',
       program:
-        'Diplomado en Seguridad Informatica, Computer and Information Systems Security/Information Assurance',
+        'Diplomado en Seguridad Informatica',
       period: 'Apr 2025 - Jun 2025',
       details: 'Formacion en seguridad informatica aplicada y fundamentos de proteccion de sistemas.',
       skills: ['Seguridad de redes', 'Software Development', 'Seguridad de la informacion', 'HTML'],
@@ -62,7 +130,7 @@ export class EducationComponent implements AfterViewInit, OnDestroy {
     },
     {
       institution: 'ITLA',
-      program: 'Certificado de Desarrollo Web Front-End con Angular, Web/Multimedia Management and Webmaster',
+      program: 'Certificado de Desarrollo Web Front-End con Angular',
       period: 'Jan 2025 - Mar 2025',
       details: 'Formacion en desarrollo frontend moderno con Angular y diseno de interfaces web.',
       skills: [
@@ -148,9 +216,9 @@ export class EducationComponent implements AfterViewInit, OnDestroy {
       skills: ['Microsoft 365 and Cloud Administration']
     },
     {
-      institution: 'MACROSeguridad-MASEG',
+      institution: 'MACROSeguridad-MASEG -- INFOTEP',
       program: 'Fundamentos de Ciberseguridad',
-      period: 'Sep 2025 - Nov 2025 | Issued Nov 2025 - Expires Nov 2035',
+      period: 'Sep 2025 - Nov 2025 | Issued Nov 2025',
       details:
         'Diplomado y certificacion orientados a operaciones de infraestructura, redes y buenas practicas de soporte.',
       skills: [

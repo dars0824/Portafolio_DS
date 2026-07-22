@@ -41,6 +41,20 @@
   box-shadow: 0 16px 24px rgba(0, 0, 0, 0.36);
 }
 
+.experience-card__media {
+  overflow: hidden;
+  border-radius: 1rem;
+  margin-bottom: 1rem;
+}
+
+.experience-card__image {
+  width: 100%;
+  display: block;
+  min-height: 220px;
+  object-fit: cover;
+  transform: translate3d(0, 0, 0);
+}
+
 .experience-card__period {
   margin: 0;
   font-family: var(--font-mono);

@@ -35,7 +35,13 @@ export class ContactComponent {
       value: 'github.com/dars0824',
       href: 'https://github.com/dars0824',
       hint: 'Repositorios, practicas y proyectos.'
-    }
+    },
+   /* {
+      label: 'Aldaba',
+      value: 'aldaba.com/dars0824',
+      href: '',
+      hint: ''
+    }, */
   ];
 
   protected readonly cvUrl = CV_FILE_URL;

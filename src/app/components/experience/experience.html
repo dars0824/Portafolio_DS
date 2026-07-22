@@ -6,14 +6,26 @@
 
   <div class="experience-grid">
     @for (item of experience; track item.role) {
-      <article class="experience-card">
-        <p class="experience-card__period">{{ item.period }}</p>
-        <h3>{{ item.role }}</h3>
-        <h4>{{ item.company }}</h4>
-        <p class="experience-card__location">{{ item.location }}</p>
-        <p>{{ item.impact }}</p>
-        <p class="experience-card__skills"><strong>Skills:</strong> {{ item.skills.join(' - ') }}</p>
-      </article>
+    <article class="experience-card">
+      @if (item.imageSrc) {
+      <div class="experience-card__media">
+        <img
+          #parallaxImage
+          class="experience-card__image"
+          [src]="item.imageSrc"
+          [alt]="`Foto de ${item.company}`"
+          loading="lazy"
+          decoding="async" />
+      </div>
+      }
+      <p class="experience-card__period">{{ item.period }}</p>
+      <h3>{{ item.role }}</h3>
+      <h4>{{ item.company }}</h4>
+      <p class="experience-card__location">{{ item.location }}</p>
+      <p>{{ item.impact }}</p>
+      <p class="experience-card__skills"><strong>Skills:</strong> {{
+        item.skills.join(' - ') }}</p>
+    </article>
     }
   </div>
 </div>

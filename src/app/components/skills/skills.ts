@@ -43,7 +43,7 @@ export class SkillsComponent {
     },
     {
       name: 'Networking',
-      level: 87,
+      level: 89,
       domain: 'Redes',
       note: 'Rastreo de tomas de datos, configuracion basica y soporte de conectividad.'
     },
@@ -73,7 +73,7 @@ export class SkillsComponent {
     },
     {
       name: 'Ingles B1',
-      level: 70,
+      level: 75,
       domain: 'Comunicacion',
       note: 'Comprension y comunicacion tecnica intermedia en entornos de trabajo.'
     }
