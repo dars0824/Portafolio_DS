@@ -59,7 +59,7 @@ src/
 Clona el repositorio:
 
 ```bash
-git clone https://github.com/tu-usuario/tu-repositorio.git
+git clone https://github.com/dars0824/Portafolio_DS
 ```
 
 Entra al proyecto:
