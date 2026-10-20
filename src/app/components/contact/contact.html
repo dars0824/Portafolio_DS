@@ -1,18 +1,20 @@
 <div class="content-block">
   <header class="content-block__header">
     <p>Contacto</p>
-    <h2>Let us build something serious</h2>
+    <h2>Construyamos algo serio</h2>
   </header>
 
   <div class="contact-grid">
     @for (channel of channels; track channel.label) {
-      <a class="contact-card" [href]="channel.href" target="_blank" rel="noopener">
-        <h3>{{ channel.label }}</h3>
-        <p class="contact-card__value">{{ channel.value }}</p>
-        <p>{{ channel.hint }}</p>
-      </a>
+    <a class="contact-card" [href]="channel.href" target="_blank"
+      rel="noopener">
+      <h3>{{ channel.label }}</h3>
+      <p class="contact-card__value">{{ channel.value }}</p>
+      <p>{{ channel.hint }}</p>
+    </a>
     }
   </div>
 
-  <a class="contact-cv" [href]="cvUrl" target="_blank" rel="noopener">Ver CV actualizado</a>
+  <a class="contact-cv" [href]="cvUrl" target="_blank" rel="noopener">Ver CV
+    actualizado</a>
 </div>

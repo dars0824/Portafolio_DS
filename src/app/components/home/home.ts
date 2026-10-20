@@ -46,6 +46,13 @@ export class HomeComponent implements AfterViewInit, OnDestroy {
     }
   }
 
+  protected scrollToSection(sectionId: string): void {
+    document.getElementById(sectionId)?.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start'
+    });
+  }
+
   private schedule(delayMs: number): void {
     this.timeoutId = window.setTimeout(() => this.tickTyping(), delayMs);
   }

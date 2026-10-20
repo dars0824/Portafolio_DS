@@ -1,17 +1,17 @@
 <header class="menu-shell">
-  <a class="menu-shell__brand" href="#home" (click)="scrollTo('home', $event)">
+  <button class="menu-shell__brand" type="button" (click)="scrollTo('home')">
     <span class="menu-shell__brand-text">Darwin Sosa</span>
-  </a>
+  </button>
 
   <nav class="menu-shell__nav" aria-label="Navegacion principal">
     @for (section of sections; track section.id) {
-    <a
+    <button
+      type="button"
       class="menu-shell__link"
-      [href]="'#' + section.id"
       [class.menu-shell__link--active]="activeSection() === section.id"
-      (click)="scrollTo(section.id, $event)">
+      (click)="scrollTo(section.id)">
       <span>{{ section.shortLabel }}</span>
-    </a>
+    </button>
     }
   </nav>
 </header>

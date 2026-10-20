@@ -133,20 +133,23 @@
   margin-top: 0.4rem;
 }
 
-.home__actions a {
+.home__actions button {
   text-decoration: none;
   border-radius: 0.82rem;
   padding: 0.62rem 0.95rem;
   border: 1px solid rgba(0, 255, 198, 0.32);
+  background: transparent;
   color: var(--text-main);
+  cursor: pointer;
+  font: inherit;
   transition: transform 240ms ease, box-shadow 240ms ease, border-color 240ms ease;
 }
 
-.home__actions a:first-child {
+.home__actions button:first-child {
   background: linear-gradient(120deg, rgba(0, 212, 255, 0.22), rgba(0, 255, 198, 0.18));
 }
 
-.home__actions a:hover {
+.home__actions button:hover {
   transform: translateY(-2px);
   border-color: rgba(0, 255, 198, 0.84);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.38);
@@ -184,22 +187,7 @@
 }
 
 .home__portrait-scan {
-  position: absolute;
-  inset: 1rem;
-  border-radius: 0.9rem;
-  border: 1px solid rgba(0, 255, 198, 0.28);
-  pointer-events: none;
-  overflow: hidden;
-}
-
-.home__portrait-scan::after {
-  content: '';
-  position: absolute;
-  inset-inline: 0;
-  height: 18%;
-  top: -18%;
-  background: linear-gradient(to bottom, transparent, rgba(0, 255, 198, 0.22), transparent);
-  animation: scan-pass 3.5s linear infinite;
+  display: none;
 }
 
 .section-slot {
@@ -228,16 +216,6 @@
   50%,
   100% {
     opacity: 0;
-  }
-}
-
-@keyframes scan-pass {
-  from {
-    top: -20%;
-  }
-
-  to {
-    top: 120%;
   }
 }
 

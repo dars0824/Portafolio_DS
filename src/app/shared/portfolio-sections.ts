@@ -5,11 +5,11 @@ export interface PortfolioSection {
 }
 
 export const PORTFOLIO_SECTIONS: PortfolioSection[] = [
-  { id: 'home', label: 'Home', shortLabel: 'Home' },
-  { id: 'skills', label: 'Skills / Lenguajes', shortLabel: 'Skills' },
-  { id: 'education', label: 'Educacion', shortLabel: 'Educacion' },
+  { id: 'home', label: 'Inicio', shortLabel: 'Inicio' },
+  { id: 'skills', label: 'Habilidades / Lenguajes', shortLabel: 'Habilidades' },
+  { id: 'education', label: 'Educación', shortLabel: 'Educación' },
   { id: 'experience', label: 'Experiencia', shortLabel: 'Experiencia' },
   { id: 'projects', label: 'Proyectos', shortLabel: 'Proyectos' },
-  { id: 'cybersecurity', label: 'Zona Cybersecurity', shortLabel: 'Cyber' },
-  { id: 'contact', label: 'Contacto', shortLabel: 'Contacto' }
+  { id: 'contact', label: 'Contacto', shortLabel: 'Contacto' },
+  { id: 'cybersecurity', label: 'Zona Ciberseguridad', shortLabel: 'Ciber' }
 ];

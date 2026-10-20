@@ -93,24 +93,49 @@ export class EducationComponent implements AfterViewInit, OnDestroy {
     },
     {
       institution: 'Cisco Networking Academy',
-      program: 'CCNA 2: Switching, Routing, and Wireless Essentials',
+      program: 'CCNP: Switching, Routing, and Wireless Essentials',
       period: 'Apr 2026 - Ago 2026 | Issued Ago 2026',
       details: 'Formacion en configuracion de redes y seguridad de sistemas en red.',
-      skills: ['Seguridad de redes', 'Networking', 'Configuracion de routers y switches', 'Redes LAN/WAN']
+      skills: ['Seguridad de redes', 'Networking', 'Configuracion de routers y switches', 'Redes LAN/WAN'],
+      credentials: [
+        {
+          src: DIPLOMA_FILES.previewCcnp,
+          href: DIPLOMA_FILES.ccnp,
+          alt: 'Certificado CCNP - Cisco Networking Academy',
+          type: 'image'
+        }
+      ]
     },
     {
       institution: 'Cisco Networking Academy',
       program: 'C++ Essentials',
       period: 'Apr 2026 - Ago 2026 | Issued Ago 2026',
       details: 'Formacion en fundamentos de programacion y desarrollo de software.',
-      skills: ['Programacion en C++', 'Desarrollo de software', 'Algoritmos y estructuras de datos']
+      skills: ['Programacion en C++', 'Desarrollo de software', 'Algoritmos y estructuras de datos'],
+      credentials: [
+        {
+          src: DIPLOMA_FILES.previewCPlusPlus,
+          href: DIPLOMA_FILES.cPlusPlus,
+          alt: 'Certificado C++ Essentials - Cisco Networking Academy',
+          type: 'image'
+        }
+      ]
     },
     {
       institution: 'Fundacion Carlos Slim',
       program: 'Administrador de bases de datos',
       period: 'Apr 2026 - Ago 2026 | Issued Ago 2026',
       details: 'Formacion en administracion de bases de datos y seguridad de la informacion.',
-      skills: ['Administracion de bases de datos', 'SQL', 'SQL Server']
+      skills: ['Administracion de bases de datos', 'SQL', 'SQL Server'],
+      credentials: [
+        {
+          src: DIPLOMA_FILES.previewAdministradorBasesDatos,
+          href: DIPLOMA_FILES.administradorBasesDatos,
+          alt: 'Certificado Administrador de Bases de Datos - Fundacion Carlos Slim',
+          type: 'image'
+        }
+      ]
+
     },
     {
       institution: 'ITLA',
@@ -196,10 +221,10 @@ export class EducationComponent implements AfterViewInit, OnDestroy {
     },
     {
       institution: 'Universidad APEC',
-      program: 'Formacion academica complementaria',
-      period: 'Formacion registrada en CV',
-      details: 'Formacion adicional orientada al fortalecimiento profesional en tecnologia.',
-      skills: ['Base academica', 'Pensamiento analitico', 'Aprendizaje continuo']
+      program: 'Ingles Intermedio',
+      period: '2023 - 2024',
+      details: 'Formacion adicional orientada en la comunicacion y comprension del idioma ingles.',
+      skills: ['Inglés B2', 'Comprension de lectura', 'Comprension auditiva', 'Expresion oral', 'Expresion escrita']
     },
     {
       institution: 'NIAERD',
@@ -289,10 +314,6 @@ export class EducationComponent implements AfterViewInit, OnDestroy {
   }
 
   protected credentialPreviewSrc(credential: DiplomaPhoto): string {
-    if (credential.type !== 'pdf') {
-      return credential.src;
-    }
-
-    return `${credential.src}#toolbar=0&navpanes=0&scrollbar=0&view=FitH`;
+    return credential.src ?? '';
   }
 }

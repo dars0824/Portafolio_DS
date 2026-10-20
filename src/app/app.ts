@@ -1,4 +1,5 @@
 ﻿import {
+  AfterViewInit,
   ChangeDetectionStrategy,
   Component,
   OnDestroy,
@@ -22,7 +23,10 @@ import { IntroStateService } from './services/intro-state.service';
   styleUrl: './app.css',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class App implements OnDestroy {
+export class App implements AfterViewInit, OnDestroy {
+  ngAfterViewInit(): void {
+    // no-op: reveal logic moved to the ScrollSpyDirective.
+  }
   private readonly introState = inject(IntroStateService);
 
   protected readonly introDone = computed(() => this.introState.introCompleted());
@@ -98,4 +102,5 @@ export class App implements OnDestroy {
       this.scrollButtonOpacity.set(opacity);
     }
   }
+
 }

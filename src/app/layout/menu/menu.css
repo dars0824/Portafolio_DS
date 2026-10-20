@@ -24,8 +24,13 @@
   display: inline-flex;
   align-items: center;
   gap: 0.2rem;
+  background: transparent;
+  border: 0;
+  padding: 0;
   color: var(--text-main);
   text-decoration: none;
+  cursor: pointer;
+  font: inherit;
 }
 
 .menu-shell__brand-text {
@@ -47,11 +52,14 @@
   padding: 0.5rem 0.76rem;
   border-radius: 0.8rem;
   border: 1px solid transparent;
+  background: transparent;
   color: var(--text-soft);
   font-size: 0.78rem;
   text-transform: uppercase;
   letter-spacing: 0.06em;
   text-decoration: none;
+  cursor: pointer;
+  font: inherit;
   transform-style: preserve-3d;
   transition:
     transform 260ms ease,
@@ -100,16 +108,14 @@
     justify-content: flex-start;
     overflow-x: auto;
     padding-bottom: 0.28rem;
-    scrollbar-width: thin;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
   }
 
   .menu-shell__nav::-webkit-scrollbar {
-    height: 4px;
-  }
-
-  .menu-shell__nav::-webkit-scrollbar-thumb {
-    background: rgba(0, 212, 255, 0.42);
-    border-radius: 999px;
+    display: none;
+    width: 0;
+    height: 0;
   }
 }
 

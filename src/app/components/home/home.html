@@ -2,13 +2,14 @@
   <div class="home__layout">
     <div class="home__top">
       <div class="home__intro">
-        <p class="home__kicker">Auxiliar de Sistemas | Ciberseguridad y Soporte
-          TI</p>
+        <p class="home__kicker">Futuro Ingeniero en Ciberseguridad |
+          Programador Frontend por Pasion
+        </p>
         <h1 class="home__name">Darwin Alfonso Sosa Santana</h1>
         <p class="home__intro-text">
-          Tecnico orientado a soporte TI, redes y ciberseguridad con experiencia
-          en operacion onsite y mejora
-          continua.
+          Tecnico orientado a soporte Tecnico de TIC, redes y ciberseguridad con
+          experiencia
+          en operacion presencial y remota.
         </p>
       </div>
 
@@ -23,7 +24,7 @@
 
     <div class="home__copy">
       <h2 class="home__headline">
-        Soporte tecnico, redes y seguridad <span>con enfoque practico</span>
+        Soporte tecnico, redes y <span>ciberseguridad</span>
       </h2>
       <p class="home__description">
         Estudiante de ITLA con experiencia como soporte técnico, disponibilidad
@@ -33,9 +34,7 @@
         operativa.
       </p>
       <div class="home__meta" aria-label="Resumen profesional">
-        <span>Ubicacion: Santo Domingo Norte</span>
-        <span>Idioma: Ingles (B1)</span>
-        <span>Disponibilidad: Tiempo completo, Medio tiempo, Parcial</span>
+        <span>Idiomas: Ingles (B2), Español (Nativo)</span>
       </div>
 
       <div class="home__terminal" aria-label="Terminal simulada">
@@ -45,8 +44,10 @@
       </div>
 
       <div class="home__actions">
-        <a href="#experience">Ver Experiencia</a>
-        <a href="#contact">Abrir Contacto</a>
+        <button type="button" (click)="scrollToSection('experience')">Ver
+          Experiencia</button>
+        <button type="button" (click)="scrollToSection('contact')">Abrir
+          Contacto</button>
       </div>
     </div>
   </div>
@@ -56,7 +57,7 @@
   @defer (on viewport; prefetch on idle) {
   <app-skills></app-skills>
   } @placeholder {
-  <div class="section-slot__placeholder">Cargando Skills / Lenguajes...</div>
+  <div class="section-slot__placeholder">Cargando habilidades...</div>
   }
 </section>
 
@@ -84,18 +85,18 @@
   }
 </section>
 
-<section id="cybersecurity" data-menu-section class="section-slot">
-  @defer (on viewport; prefetch on idle) {
-  <app-cybersecurity></app-cybersecurity>
-  } @placeholder {
-  <div class="section-slot__placeholder">Cargando Zona Cybersecurity...</div>
-  }
-</section>
-
 <section id="contact" data-menu-section class="section-slot">
   @defer (on viewport; prefetch on idle) {
   <app-contact></app-contact>
   } @placeholder {
   <div class="section-slot__placeholder">Cargando Contacto...</div>
+  }
+</section>
+
+<section id="cybersecurity" data-menu-section class="section-slot">
+  @defer (on viewport; prefetch on idle) {
+  <app-cybersecurity></app-cybersecurity>
+  } @placeholder {
+  <div class="section-slot__placeholder">Cargando zona ciberseguridad...</div>
   }
 </section>

@@ -23,7 +23,7 @@
           }
         </h4>
         <p>{{ entry.details }}</p>
-        <p class="timeline__skills"><strong>Skills:</strong> {{
+        <p class="timeline__skills"><strong>Habilidades:</strong> {{
           entry.skills.join(' - ') }}</p>
 
         @if (entry.credentials?.length) {
@@ -33,13 +33,14 @@
             class="timeline__credential"
             [href]="credential.href ?? credential.src"
             target="_blank"
-            rel="noopener">
+            rel="noopener noreferrer">
             @if (credential.type === 'pdf') {
             <iframe
               class="timeline__credential-preview"
               [src]="credentialPreviewSrc(credential)"
               [title]="credential.alt"
-              loading="lazy"></iframe>
+              loading="lazy"
+              referrerpolicy="no-referrer"></iframe>
             } @else {
             <img
               class="timeline__credential-preview"

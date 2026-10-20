@@ -27,7 +27,7 @@ export class MenuComponent implements AfterViewInit, OnDestroy {
   protected readonly activeSection = signal(PORTFOLIO_SECTIONS[0].id);
   protected readonly activeLabel = computed(() => {
     const current = this.sections.find((section) => section.id === this.activeSection());
-    return current?.label ?? 'Home';
+    return current?.label ?? 'Inicio';
   });
 
   private observer?: IntersectionObserver;
@@ -74,8 +74,8 @@ export class MenuComponent implements AfterViewInit, OnDestroy {
     document.documentElement.style.removeProperty('--menu-height');
   }
 
-  protected scrollTo(sectionId: string, event: Event): void {
-    event.preventDefault();
+  protected scrollTo(sectionId: string, event?: Event): void {
+    event?.preventDefault();
 
     document.getElementById(sectionId)?.scrollIntoView({
       behavior: 'smooth',

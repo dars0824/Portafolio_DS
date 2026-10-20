@@ -23,7 +23,7 @@ export class ProjectsComponent {
       title: 'Portafolio Profesional',
       description:
         'Sitio personal enfocado en presentar experiencia en soporte TI, ciberseguridad y formacion tecnica.',
-      technologies: ['Angular', 'TypeScript', 'CSS', 'HTML'],
+      technologies: ['Angular'],
       problemSolved: 'Centralizar perfil profesional y certificaciones en una sola experiencia web.',
       github: 'https://github.com/dars0824',
       mediaGradient:

@@ -7,11 +7,20 @@ import {
   QueryList,
   ViewChildren
 } from '@angular/core';
-import SimpleParallax from 'simple-parallax-js';
+import SimpleParallax from 'simple-parallax-js/vanilla';
+import { ScrollSpyDirective } from '../../directives/scroll-spy.directive';
+
+interface ExperienceLink {
+  label: string;
+  href: string;
+}
 
 interface ExperienceItem {
   role: string;
   company: string;
+  companyWebsite?: string;
+  companyLogo?: string;
+  additionalLinks?: ExperienceLink[];
   period: string;
   location: string;
   impact: string;
@@ -22,7 +31,7 @@ interface ExperienceItem {
 @Component({
   selector: 'app-experience',
   standalone: true,
-  imports: [],
+  imports: [ScrollSpyDirective],
   templateUrl: './experience.html',
   styleUrl: './experience.css',
   changeDetection: ChangeDetectionStrategy.OnPush
@@ -35,29 +44,62 @@ export class ExperienceComponent implements AfterViewInit, OnDestroy {
 
   protected readonly experience: ExperienceItem[] = [
     {
-      role: 'Auxiliar de sistemas',
-      company: 'Serenade Punta Cana Beach & Spa Resort',
-      period: 'Aug 2025 - Jan 2026 (6 meses)',
-      location: 'Punta Cana, La Altagracia, Republica Dominicana (On-site)',
+      role: 'Técnico de soporte informático',
+      company: 'RAMVAR Computadoras SRL',
+      companyWebsite: 'https://www.ramvar.com/',
+      companyLogo: '/shared/fotos/logo-ramvar.png',
+      period: 'Septiembre 2026 - Presente',
+      location: 'Av. Núñez de Càceres, Santo Domingo, República Dominicana (Presencial)',
       impact:
-        'Soporte tecnico y administracion de infraestructura TI con enfoque en continuidad operativa, redes y respuesta ante incidentes.',
+        'Atención técnica a clientes, diagnóstico y reparación de equipos, soporte de hardware y software, mantenimiento preventivo y asistencia operativa para usuarios finales y equipos de oficina.',
       skills: [
-        'Aptitudes para la supervision',
+        'Soporte técnico',
+        'Mantenimiento de hardware y software',
+        'Diagnóstico de equipos',
+        'Instalación de software',
+        'Atención al cliente',
+        'Resolución de incidencias',
+        'Equipos de oficina',
+        'Soporte remoto',
+        'Soporte a domicilio'
+      ],
+      imageSrc: '/shared/fotos/logo-ramvar.png'
+    },
+    {
+      role: 'Auxiliar de sistemas',
+      company: 'Best Hotels',
+      companyWebsite: 'https://www.besthotels.es/en/dominican-republic.html',
+      additionalLinks: [
+        {
+          label: 'Serenade Punta Cana Beach & Spa Resort',
+          href: 'https://www.serenadepuntacana.com/'
+        },
+        {
+          label: 'Serenade All Suites',
+          href: 'https://www.serenadeallsuites.com/'
+        }
+      ],
+      period: 'Ago 2025 - Jan 2026 (6 meses)',
+      location: 'Punta Cana, La Altagracia, República Dominicana (Presencial y remoto)',
+      impact:
+        'Soporte técnico y administración de infraestructura TI bajo la operación de Best Hotels, con atención a propiedades hoteleras y continuidad operativa de sistemas, redes y servicios críticos.',
+      skills: [
+        'Aptitudes para la supervisión',
         'Windows Server',
-        'Soporte tecnico',
+        'Soporte técnico',
         'Seguridad de redes',
         'Networking',
         'CCTV Monitoring',
         'OLT',
         'Fiber Optic Cable',
-        'Administracion de Microsoft Office 365',
-        'Administracion de sistemas',
-        'Gestion de servicios de TI',
+        'Administración de Microsoft Office 365',
+        'Administración de sistemas',
+        'Gestión de servicios de TI',
         'Experiencia de Active Directory',
         'Respuesta ante incidentes',
         'Mantenimiento del sistema',
         'CCTV Installation',
-        'Impresoras',
+        'Impresoras de alto volumen',
         'VLAN',
         'Conflict Resolution',
         'IP Cameras'
