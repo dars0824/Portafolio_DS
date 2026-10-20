@@ -1,59 +1,139 @@
-# Portafolio
+# 💼 Portafolio Personal - Darwin Sosa
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.1.3.
+Portafolio profesional desarrollado con Angular para mostrar mi perfil como **Auxiliar de Sistemas, Soporte Técnico y futuro profesional en Ciberseguridad**.
 
-## Development server
+El objetivo del proyecto es presentar mis habilidades, experiencia, certificaciones, proyectos y facilitar el contacto con reclutadores y empresas.
 
-To start a local development server, run:
+## 🌐 Demo
+
+Puedes visitar el portafolio aquí:
+
+> https://portafolio-ds.pages.dev
+
+---
+
+## 🚀 Características
+
+- Diseño moderno y totalmente responsive.
+- Interfaz desarrollada con Angular 21.
+- Navegación fluida entre secciones.
+- Información profesional organizada.
+- Sección de habilidades técnicas.
+- Experiencia laboral.
+- Formación académica.
+- Proyectos destacados.
+- Información de contacto.
+
+---
+
+## 🛠 Tecnologías utilizadas
+
+- Angular 21
+- TypeScript
+- HTML5
+- CSS3
+- Cloudflare Pages
+- Git
+- GitHub
+
+---
+
+## 📂 Estructura del proyecto
+
+```
+src/
+├── app/
+│   ├── components/
+│   ├── pages/
+│   ├── shared/
+│   └── services/
+├── assets/
+├── environments/
+└── styles.css
+```
+
+---
+
+## ⚙️ Instalación
+
+Clona el repositorio:
+
+```bash
+git clone https://github.com/dars0824/Portafolio_DS
+```
+
+Entra al proyecto:
+
+```bash
+cd nombre-del-proyecto
+```
+
+Instala las dependencias:
+
+```bash
+npm install
+```
+
+Inicia el servidor de desarrollo:
 
 ```bash
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Luego abre:
 
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
+```
+http://localhost:4200
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+---
 
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
+## 📦 Build de producción
 
 ```bash
 ng build
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+Los archivos compilados se generarán en:
 
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
+```
+dist/
 ```
 
-## Running end-to-end tests
+---
 
-For end-to-end (e2e) testing, run:
+## 📱 Responsive
 
-```bash
-ng e2e
-```
+El proyecto está optimizado para:
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+- 💻 Escritorio
+- 📱 Teléfonos móviles
+- 📲 Tablets
 
-## Additional Resources
+---
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## 📈 Futuras mejoras
+
+- Modo claro/oscuro.
+- Versiones en español e inglés.
+- Animaciones avanzadas.
+- Blog personal.
+- Integración con GitHub API.
+- Descarga del CV en PDF.
+
+---
+
+## 👨‍💻 Autor
+
+**Darwin Alfonso Sosa Santana**
+
+- Soporte Técnico
+- Redes
+- Ciberseguridad
+- Angular Developer
+
+---
+
+## 📄 Licencia
+
+Este proyecto es de uso personal y tiene fines profesionales como portafolio.
